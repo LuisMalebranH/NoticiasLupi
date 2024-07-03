@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import Articulo
+from .models import Articulo, Categoria, Editor, Autor
+
 
 
 
@@ -8,3 +9,6 @@ from .models import Articulo
 
 
 admin.site.register(Articulo)
+admin.site.register(Categoria)
+admin.site.register(Autor)
+admin.site.register(Editor)

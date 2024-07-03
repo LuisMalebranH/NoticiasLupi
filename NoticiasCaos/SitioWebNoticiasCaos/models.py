@@ -12,6 +12,12 @@ class Categoria (models.Model):
     def __str__(self):
         return str(self.nombreCat)
 
+    def get_absolute_url(self):
+        return reverse('indexprueba')
+
+
+
+
 class Etiqueta (models.Model):
     nombreEtiqueta = models.CharField(max_length=40)
 
@@ -21,7 +27,7 @@ class Etiqueta (models.Model):
 
 
 class Autor (models.Model):
-    usuarioAutor = models.OneToOneField(User, on_delete=models.CASCADE, related_name='autor')
+    usuarioAutor = models.OneToOneField(User, on_delete=models.CASCADE)
     priNomAutor = models.CharField(max_length=15)
     segNomAutor = models.CharField(max_length=15) 
     apPaternoAutor = models.CharField(max_length=15) 
@@ -31,7 +37,7 @@ class Autor (models.Model):
     correoElectronico = models.CharField(max_length=40, default="example@email.com")
 
     def __str__(self):
-        return self.usuarioAutor
+        return str(self.usuarioAutor)
 
 class Editor (models.Model):
     usuarioEditor = models.OneToOneField(User, on_delete=models.CASCADE, related_name='editor')
@@ -44,7 +50,7 @@ class Editor (models.Model):
     correoElectronico = models.CharField(max_length=40, default="example@email.com")
 
     def __str__(self):
-        return self.usuarioEditor
+        return str(self.usuarioEditor)
 
 class Articulo (models.Model):
     
@@ -55,10 +61,9 @@ class Articulo (models.Model):
     sinopsisArticulo = models.CharField(max_length=255)
     imagenArticulo = models.ImageField(upload_to = "img/", blank=True, null=True)
     fechaPublicacion = models.DateField(auto_now_add=True)
-    fechaActualizacon = models.DateField(auto_now_add=True)
     usuarioAutor = models.ForeignKey(Autor, related_name='articulos_autor', on_delete=models.CASCADE)
     usuarioEditor = models.ForeignKey(Editor, related_name='articulos_editor', on_delete=models.CASCADE, blank=True, null=True)
-    categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
+    nombreCat = models.CharField(max_length=255, default="Sin Asignar")
 
 
     def __str__(self):

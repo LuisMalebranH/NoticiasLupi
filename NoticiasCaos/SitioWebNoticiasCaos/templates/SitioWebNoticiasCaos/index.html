@@ -1,9 +1,11 @@
-{%  extends 'base_template.html' %}
-  
-  <title>{%block title%} Caos News - Inicio {% endblock %}</title>
+{%  extends 'SitioWebNoticiasCaos/base_template.html' %}
+{% load static %}
+
+  {% block title %} Caos News - Inicio {% endblock %}
 
     
     {% block content %}
+
 
 <body style="margin-bottom: 10px;">
   <div class="container" style="max-width: 1000px; margin: auto;">
@@ -22,7 +24,7 @@
       </div>
       <div class="carousel-inner carousel-fade">
         <div class="carousel-item active" data-bs-interval="2000">
-          <img src="img/nvidia.webp" class="d-block w-100 img-fluid h-100" alt="Imagen no encontrada">
+          <img src="{% static 'img/nvidida.webp' %}"  class="d-block w-100 img-fluid h-100" alt="Imagen no encontrada">
           <div class="carousel-caption d-none d-md-block">
             <h5>¡Gran anuncio de Nvidia!</h5>
             <p>Nvidia revela su nueva serie de tarjetas gráficas GeForce RTX 40 con tecnología de trazado de rayos
@@ -30,7 +32,7 @@
           </div>
         </div>
         <div class="carousel-item" data-bs-interval="2000">
-          <img src="img/playstation.jpg" class="d-block w-100 img-fluid h-100" alt="...">
+          <img src="{% static 'img/playstation.jpg' %}"  class="d-block w-100 img-fluid h-100" alt="...">
           <div class="carousel-caption d-none d-md-block">
             <h5>¡Lanzamiento de la nueva consola PlayStation!</h5>
             <p>La nueva consola de última generación, X-Play, llegará al mercado el próximo mes con una biblioteca de
@@ -38,14 +40,14 @@
           </div>
         </div>
         <div class="carousel-item" data-bs-interval="2000">
-          <img src="img/dark-souls.jpg" class="d-block w-100 img-fluid h-100" alt="...">
+          <img src="{% static 'img/dark-souls.jpg' %}" class="d-block w-100 img-fluid h-100" alt="...">
           <div class="carousel-caption d-none d-md-block">
             <h5>¡Gran expansión para Dark Souls!</h5>
             <p>Se anuncia una expansión masiva para el aclamado juego de rol Dark Souls. ¡Prepárate para enfrentar nuevos desafíos y descubrir secretos oscuros!</p>
           </div>
         </div>
         <div class="carousel-item" data-bs-interval="2000">
-          <img src="img/rol.jpg" class="d-block w-100 img-fluid h-100" alt="...">
+          <img src="{% static 'img/rol.jpg' %}"  class="d-block w-100 img-fluid h-100" alt="...">
           <div class="carousel-caption d-none d-md-block">
             <h5>¡Nuevo juego de rol en mundo abierto!</h5>
             <p>Se anuncia un nuevo juego de rol en mundo abierto que promete una experiencia épica con gráficos
@@ -53,7 +55,7 @@
           </div>
         </div>
         <div class="carousel-item" data-bs-interval="2000">
-          <img src="img/esports_stand.jpg" class="d-block w-100 img-fluid h-100" alt="...">
+          <img src="{% static 'img/esports_stand.jpg' %}"  class="d-block w-100 img-fluid h-100" alt="...">
           <div class="carousel-caption d-none d-md-block">
             <h5>¡Evento exclusivo de eSports!</h5>
             <p>Se celebrará un evento de eSports con los mejores jugadores del mundo compitiendo por el título en una
@@ -79,7 +81,7 @@
     <div class="row row-cols-1 row-cols-md-3 g-4">
       <div class="col">
         <div class="card h-100">
-          <img src="img/xyz.jpg" class="card-img-top" alt="Noticia sobre el lanzamiento de un nuevo juego">
+          <img src="{% static 'img/xyz.jpg' %}"  class="card-img-top" alt="Noticia sobre el lanzamiento de un nuevo juego">
           <div class="card-body d-flex flex-column">
             <h5 class="card-title">Nuevo Juego Anunciado</h5>
             <p class="card-text flex-grow-1">Conoce todos los detalles sobre el último juego anunciado por XYZ
@@ -90,7 +92,7 @@
       </div>
       <div class="col">
         <div class="card h-100">
-          <img src="img/warquest.jpg" class="card-img-top" alt="Actualización de un juego popular">
+          <img src="{% static 'img/warquest.jpg' %}"  class="card-img-top" alt="Actualización de un juego popular">
           <div class="card-body d-flex flex-column">
             <h5 class="card-title">Gran Actualización para WarQuest</h5>
             <p class="card-text flex-grow-1">WarQuest recibe una actualización masiva que añade nuevos niveles,
@@ -101,7 +103,7 @@
       </div>
       <div class="col">
         <div class="card h-100">
-          <img src="img/esports.jpg" class="card-img-top" alt="Evento de eSports">
+          <img src="{% static 'img/esports.jpg' %}"  class="card-img-top" alt="Evento de eSports">
           <div class="card-body d-flex flex-column">
             <h5 class="card-title">Próximos Evento de eSports</h5>
             <p class="card-text flex-grow-1">No te pierdas los próximos torneos de eSports este mes, con equipos de

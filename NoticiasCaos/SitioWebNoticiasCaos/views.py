@@ -1,13 +1,13 @@
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
-from .models import Articulo
+from .models import Articulo, Categoria
 from .forms import ArticuloForm 
 # Create your views here.
 
 #Aca se crea todo lo que es vista, se puede generar desde un archivo HTML o se
 #Pueden usar los templates existentes en Django (ERRORES Y FORMularios de ingreso)
-
+##########################################ARTICULOS########################################################
 
 class PaginaPrincipal(ListView):
     model = Articulo
@@ -35,6 +35,16 @@ class BorrarArticulo(DeleteView):
     template_name = 'SitioWebNoticiasCaos/borrararticulo.html'
     success_url = reverse_lazy('indexprueba')
 
+##########################################CATEGORIA########################################################
+
+class AgregarCategoria(CreateView):
+    model = Categoria
+    template_name = 'SitioWebNoticiasCaos/creararticulo.html'
+    fields ='__all__'
+
+
+
+
 
 def contacto(request):
     return render(request, 'SitioWebNoticiasCaos/contacto.html')
@@ -57,5 +67,4 @@ def index(request):
     context={}
     return render(request, 'SitioWebNoticiasCaos/index.html', context)
 
-def registrarUsuario():
 
